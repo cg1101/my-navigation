@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~op2-living-style-guides/assets/variables';
+//@import '~op2-living-style-guides/assets/icons';
+@import '~op2-living-style-guides/assets/typography';
+@import '~op2-living-style-guides/assets/general';
+@import '~op2-living-style-guides/assets/dropdown';
+@import '~op2-living-style-guides/assets/buttons';
+@import '~op2-living-style-guides/assets/top-nav';
+
+app-root + section#child-app-shell {
+  border: thick blue solid;
+  min-height: 1400px;
+  background-color: lightyellow;
+}
+
+app-root.side-nav-0 + section#child-app-shell {
+  margin-left: 0;
+}
+
+app-root.side-nav-1 + section#child-app-shell {
+  margin-left: 80px;
+}
+
+app-root.side-nav-2 + section#child-app-shell {
+  margin-left: 250px;
+}
+
+app-root.top-nav-0 + section#child-app-shell {
+  margin-top: 0;
+}
+
+app-root.top-nav-1 + section#child-app-shell {
+  margin-top: 64px;
+}

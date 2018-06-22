@@ -24,11 +24,22 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/op2-living-style-guides/assets",
+                "output": "/assets"
+              }
             ],
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets",
+                "node_modules/op2-living-style-guides/assets"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -81,7 +92,12 @@
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/op2-living-style-guides/assets",
+                "output": "/assets"
+              }
             ]
           }
         },

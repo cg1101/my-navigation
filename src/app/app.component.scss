@@ -1,0 +1,40 @@
+:host {
+  op-top-nav {
+    display: inline-block;
+    position: fixed;
+    top: 0;
+  }
+}
+
+:host-context(.side-nav-0) {
+  op-top-nav {
+    left: 0;
+  }
+  op-side-nav {
+    display: none;
+  }
+}
+
+:host-context(.side-nav-1) {
+  op-top-nav {
+    left: 80px;
+  }
+  op-side-nav {
+    width: 80px;
+  }
+}
+
+:host-context(.side-nav-2) {
+  op-top-nav {
+    left: 250px;
+  }
+  op-side-nav {
+    width: 250px;
+  }
+}
+
+:host-context(.top-nav-0) {
+  op-top-nav {
+    display: none;
+  }
+}
