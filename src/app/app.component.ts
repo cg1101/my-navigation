@@ -2,6 +2,9 @@ import { Component, HostListener, HostBinding } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
 
 import { NavigationNode } from 'op2-living-style-guides';
+import { Store } from '@ngrx/store';
+import { ApplicationState } from './@ngrx/reducers/app-state.reducers';
+import { LoadSavedSession } from './@ngrx/actions/app-state.actions';
 
 @Component({
   selector: 'app-root',
@@ -33,15 +36,22 @@ export class AppComponent {
     let top = this._class.top;
     let side = this._class.side;
     if (event.target['tagName'] === 'SECTION') {
-      side = side === 'side-nav-0' ? 'side-nav-1' : (side === 'side-nav-1' ? 'side-nav-2' : 'side-nav-0');
+      side =
+        side === 'side-nav-0'
+          ? 'side-nav-1'
+          : side === 'side-nav-1'
+            ? 'side-nav-2'
+            : 'side-nav-0';
     } else {
       top = top === 'top-nav-0' ? 'top-nav-1' : 'top-nav-0';
     }
-    this._class = {top, side};
+    this._class = { top, side };
   }
 
-  constructor() {
+  constructor(private store: Store<ApplicationState>) {
     this.showSideNav$ = this._showSideNav$.asObservable();
     this.showTopNav$ = this._showTopNav$.asObservable();
+
+    this.store.dispatch(new LoadSavedSession());
   }
 }
