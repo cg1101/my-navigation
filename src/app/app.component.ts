@@ -32,7 +32,7 @@ export class AppComponent {
   changeSideNavClass(event: Event) {
     let top = this._class.top;
     let side = this._class.side;
-    if (event.target.tagName === 'SECTION') {
+    if (event.target['tagName'] === 'SECTION') {
       side = side === 'side-nav-0' ? 'side-nav-1' : (side === 'side-nav-1' ? 'side-nav-2' : 'side-nav-0');
     } else {
       top = top === 'top-nav-0' ? 'top-nav-1' : 'top-nav-0';
